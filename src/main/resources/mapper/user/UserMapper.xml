@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qjy.open.dao.user.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.qjy.open.entity.user.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="user_grade" property="userGrade" jdbcType="VARCHAR" />
+    <result column="user_head_url" property="userHeadUrl" jdbcType="VARCHAR" />
+    <result column="user_big_head_url" property="userBigHeadUrl" jdbcType="VARCHAR" />
+    <result column="is_salesman" property="isSalesman" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="flow_number" property="flowNumber" jdbcType="VARCHAR" />
+    <result column="flow_number_ancillary" property="flowNumberAncillary" jdbcType="VARCHAR" />
+    <result column="company_id" property="companyId" jdbcType="INTEGER" />
+    <result column="company_type" property="companyType" jdbcType="INTEGER" />
+    <result column="company_simple_name" property="companySimpleName" jdbcType="VARCHAR" />
+    <result column="province_code" property="provinceCode" jdbcType="VARCHAR" />
+    <result column="province_name" property="provinceName" jdbcType="VARCHAR" />
+    <result column="city_code" property="cityCode" jdbcType="VARCHAR" />
+    <result column="city_name" property="cityName" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="mobile_phone" property="mobilePhone" jdbcType="VARCHAR" />
+    <result column="real_name" property="realName" jdbcType="VARCHAR" />
+    <result column="birth" property="birth" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_name, password, user_grade, user_head_url, user_big_head_url, is_salesman, 
+    status, flow_number, flow_number_ancillary, company_id, company_type, company_simple_name, 
+    province_code, province_name, city_code, city_name, email, mobile_phone, real_name, 
+    birth
+  </sql>
+  <select id="selectAllList" parameterType="java.util.Map" resultType="com.qjy.open.entity.user.User" >
+    select id,real_name realName,user_name userName,password 
+	    from user
+	    where 1=1 
+	    <if test="id != null" >
+	    	<if test="id != 0" >
+			    and id = #{id}
+	    	</if>
+	    </if>
+	    <if test="userName != null" >
+	    	<if test="userName != ''" >
+			    and user_name = #{userName}
+	    	</if>
+	    </if>
+	    <if test="password != null" >
+	    	<if test="password != ''" >
+			    and password = #{password}
+	    	</if>
+	    </if>
+	    limit #{start} , #{size}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qjy.open.entity.user.User" >
+    insert into user (id, user_name, password, 
+      user_grade, user_head_url, user_big_head_url, 
+      is_salesman, status, flow_number, 
+      flow_number_ancillary, company_id, company_type, 
+      company_simple_name, province_code, province_name, 
+      city_code, city_name, email, 
+      mobile_phone, real_name, birth
+      )
+    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{userGrade,jdbcType=VARCHAR}, #{userHeadUrl,jdbcType=VARCHAR}, #{userBigHeadUrl,jdbcType=VARCHAR}, 
+      #{isSalesman,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{flowNumber,jdbcType=VARCHAR}, 
+      #{flowNumberAncillary,jdbcType=VARCHAR}, #{companyId,jdbcType=INTEGER}, #{companyType,jdbcType=INTEGER}, 
+      #{companySimpleName,jdbcType=VARCHAR}, #{provinceCode,jdbcType=VARCHAR}, #{provinceName,jdbcType=VARCHAR}, 
+      #{cityCode,jdbcType=VARCHAR}, #{cityName,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{mobilePhone,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, #{birth,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qjy.open.entity.user.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="userGrade != null" >
+        user_grade,
+      </if>
+      <if test="userHeadUrl != null" >
+        user_head_url,
+      </if>
+      <if test="userBigHeadUrl != null" >
+        user_big_head_url,
+      </if>
+      <if test="isSalesman != null" >
+        is_salesman,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="flowNumber != null" >
+        flow_number,
+      </if>
+      <if test="flowNumberAncillary != null" >
+        flow_number_ancillary,
+      </if>
+      <if test="companyId != null" >
+        company_id,
+      </if>
+      <if test="companyType != null" >
+        company_type,
+      </if>
+      <if test="companySimpleName != null" >
+        company_simple_name,
+      </if>
+      <if test="provinceCode != null" >
+        province_code,
+      </if>
+      <if test="provinceName != null" >
+        province_name,
+      </if>
+      <if test="cityCode != null" >
+        city_code,
+      </if>
+      <if test="cityName != null" >
+        city_name,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="mobilePhone != null" >
+        mobile_phone,
+      </if>
+      <if test="realName != null" >
+        real_name,
+      </if>
+      <if test="birth != null" >
+        birth,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userGrade != null" >
+        #{userGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="userHeadUrl != null" >
+        #{userHeadUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="userBigHeadUrl != null" >
+        #{userBigHeadUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="isSalesman != null" >
+        #{isSalesman,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="flowNumber != null" >
+        #{flowNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="flowNumberAncillary != null" >
+        #{flowNumberAncillary,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="companyType != null" >
+        #{companyType,jdbcType=INTEGER},
+      </if>
+      <if test="companySimpleName != null" >
+        #{companySimpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null" >
+        #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceName != null" >
+        #{provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityName != null" >
+        #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null" >
+        #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null" >
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null" >
+        #{birth,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qjy.open.entity.user.User" >
+    update user
+    <set >
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userGrade != null" >
+        user_grade = #{userGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="userHeadUrl != null" >
+        user_head_url = #{userHeadUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="userBigHeadUrl != null" >
+        user_big_head_url = #{userBigHeadUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="isSalesman != null" >
+        is_salesman = #{isSalesman,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="flowNumber != null" >
+        flow_number = #{flowNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="flowNumberAncillary != null" >
+        flow_number_ancillary = #{flowNumberAncillary,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        company_id = #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="companyType != null" >
+        company_type = #{companyType,jdbcType=INTEGER},
+      </if>
+      <if test="companySimpleName != null" >
+        company_simple_name = #{companySimpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null" >
+        province_code = #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceName != null" >
+        province_name = #{provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        city_code = #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityName != null" >
+        city_name = #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null" >
+        mobile_phone = #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null" >
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null" >
+        birth = #{birth,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qjy.open.entity.user.User" >
+    update user
+    set user_name = #{userName,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      user_grade = #{userGrade,jdbcType=VARCHAR},
+      user_head_url = #{userHeadUrl,jdbcType=VARCHAR},
+      user_big_head_url = #{userBigHeadUrl,jdbcType=VARCHAR},
+      is_salesman = #{isSalesman,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      flow_number = #{flowNumber,jdbcType=VARCHAR},
+      flow_number_ancillary = #{flowNumberAncillary,jdbcType=VARCHAR},
+      company_id = #{companyId,jdbcType=INTEGER},
+      company_type = #{companyType,jdbcType=INTEGER},
+      company_simple_name = #{companySimpleName,jdbcType=VARCHAR},
+      province_code = #{provinceCode,jdbcType=VARCHAR},
+      province_name = #{provinceName,jdbcType=VARCHAR},
+      city_code = #{cityCode,jdbcType=VARCHAR},
+      city_name = #{cityName,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      mobile_phone = #{mobilePhone,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      birth = #{birth,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

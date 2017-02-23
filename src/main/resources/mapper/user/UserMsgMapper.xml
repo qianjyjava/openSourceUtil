@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qjy.open.dao.user.UserMsgMapper" >
+  <resultMap id="BaseResultMap" type="com.qjy.open.entity.user.UserMsg" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="salesmanId" property="salesmanid" jdbcType="INTEGER" />
+    <result column="business_life" property="businessLife" jdbcType="DATE" />
+    <result column="lastjob" property="lastjob" jdbcType="VARCHAR" />
+    <result column="duty" property="duty" jdbcType="VARCHAR" />
+    <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+    <result column="certificate_num" property="certificateNum" jdbcType="VARCHAR" />
+    <result column="exhibition_card" property="exhibitionCard" jdbcType="VARCHAR" />
+    <result column="license_card" property="licenseCard" jdbcType="VARCHAR" />
+    <result column="personal_profile" property="personalProfile" jdbcType="VARCHAR" />
+    <result column="hx_score" property="hxScore" jdbcType="DOUBLE" />
+    <result column="extension_400" property="extension400" jdbcType="VARCHAR" />
+    <result column="overdue" property="overdue" jdbcType="TIMESTAMP" />
+    <result column="status_400" property="status400" jdbcType="VARCHAR" />
+    <result column="surplus_400" property="surplus400" jdbcType="INTEGER" />
+    <result column="mdrt" property="mdrt" jdbcType="VARCHAR" />
+    <result column="ljxsbe" property="ljxsbe" jdbcType="VARCHAR" />
+    <result column="nxsbe" property="nxsbe" jdbcType="VARCHAR" />
+    <result column="tsjl" property="tsjl" jdbcType="VARCHAR" />
+    <result column="shotmsg_400" property="shotmsg400" jdbcType="VARCHAR" />
+    <result column="xbl" property="xbl" jdbcType="DOUBLE" />
+    <result column="sndkhs" property="sndkhs" jdbcType="INTEGER" />
+    <result column="ljkhs" property="ljkhs" jdbcType="INTEGER" />
+    <result column="recordTime" property="recordtime" jdbcType="TIMESTAMP" />
+    <result column="qq" property="qq" jdbcType="VARCHAR" />
+    <result column="ida" property="ida" jdbcType="VARCHAR" />
+    <result column="busylife" property="busylife" jdbcType="INTEGER" />
+    <result column="snzjyj" property="snzjyj" jdbcType="VARCHAR" />
+    <result column="clickrate" property="clickrate" jdbcType="INTEGER" />
+    <result column="constellation" property="constellation" jdbcType="VARCHAR" />
+    <result column="source" property="source" jdbcType="VARCHAR" />
+    <result column="service_num" property="serviceNum" jdbcType="VARCHAR" />
+    <result column="certificate_num_url1" property="certificateNumUrl1" jdbcType="VARCHAR" />
+    <result column="certificate_num_url2" property="certificateNumUrl2" jdbcType="VARCHAR" />
+    <result column="exhibition_card_url1" property="exhibitionCardUrl1" jdbcType="VARCHAR" />
+    <result column="exhibition_card_url2" property="exhibitionCardUrl2" jdbcType="VARCHAR" />
+    <result column="certification_url" property="certificationUrl" jdbcType="VARCHAR" />
+    <result column="hobby" property="hobby" jdbcType="VARCHAR" />
+    <result column="speciality" property="speciality" jdbcType="VARCHAR" />
+    <result column="id_card_url1" property="idCardUrl1" jdbcType="VARCHAR" />
+    <result column="age_is_publish" property="ageIsPublish" jdbcType="VARCHAR" />
+    <result column="weixin" property="weixin" jdbcType="VARCHAR" />
+    <result column="weibo" property="weibo" jdbcType="VARCHAR" />
+    <result column="boke" property="boke" jdbcType="VARCHAR" />
+    <result column="reg_time" property="regTime" jdbcType="TIMESTAMP" />
+    <result column="payment_time" property="paymentTime" jdbcType="TIMESTAMP" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="over_time" property="overTime" jdbcType="TIMESTAMP" />
+    <result column="certificate_num_time" property="certificateNumTime" jdbcType="DATE" />
+    <result column="exhibition_card_time" property="exhibitionCardTime" jdbcType="DATE" />
+    <result column="partnercode" property="partnercode" jdbcType="VARCHAR" />
+    <result column="awards" property="awards" jdbcType="VARCHAR" />
+    <result column="servicepack" property="servicepack" jdbcType="VARCHAR" />
+    <result column="picIfValid" property="picifvalid" jdbcType="VARCHAR" />
+    <result column="weimendian" property="weimendian" jdbcType="VARCHAR" />
+    <result column="weimendian_name" property="weimendianName" jdbcType="VARCHAR" />
+    <result column="weimendian_company" property="weimendianCompany" jdbcType="VARCHAR" />
+    <result column="weimendian_address" property="weimendianAddress" jdbcType="VARCHAR" />
+    <result column="weimendian_style" property="weimendianStyle" jdbcType="VARCHAR" />
+    <result column="weimendian_servicepack" property="weimendianServicepack" jdbcType="VARCHAR" />
+    <result column="weimendian_start" property="weimendianStart" jdbcType="TIMESTAMP" />
+    <result column="weChat_account" property="wechatAccount" jdbcType="VARCHAR" />
+    <result column="buscard_style" property="buscardStyle" jdbcType="VARCHAR" />
+    <result column="auth" property="auth" jdbcType="VARCHAR" />
+    <result column="weimendian_style_big" property="weimendianStyleBig" jdbcType="VARCHAR" />
+    <result column="weChat_img_path" property="wechatImgPath" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, salesmanId, business_life, lastjob, duty, id_card, certificate_num, exhibition_card, 
+    license_card, personal_profile, hx_score, extension_400, overdue, status_400, surplus_400, 
+    mdrt, ljxsbe, nxsbe, tsjl, shotmsg_400, xbl, sndkhs, ljkhs, recordTime, qq, ida, 
+    busylife, snzjyj, clickrate, constellation, source, service_num, certificate_num_url1, 
+    certificate_num_url2, exhibition_card_url1, exhibition_card_url2, certification_url, 
+    hobby, speciality, id_card_url1, age_is_publish, weixin, weibo, boke, reg_time, payment_time, 
+    start_time, over_time, certificate_num_time, exhibition_card_time, partnercode, awards, 
+    servicepack, picIfValid, weimendian, weimendian_name, weimendian_company, weimendian_address, 
+    weimendian_style, weimendian_servicepack, weimendian_start, weChat_account, buscard_style, 
+    auth, weimendian_style_big, weChat_img_path
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_msg
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user_msg
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qjy.open.entity.user.UserMsg" >
+    insert into user_msg (id, salesmanId, business_life, 
+      lastjob, duty, id_card, 
+      certificate_num, exhibition_card, license_card, 
+      personal_profile, hx_score, extension_400, 
+      overdue, status_400, surplus_400, 
+      mdrt, ljxsbe, nxsbe, 
+      tsjl, shotmsg_400, xbl, 
+      sndkhs, ljkhs, recordTime, 
+      qq, ida, busylife, 
+      snzjyj, clickrate, constellation, 
+      source, service_num, certificate_num_url1, 
+      certificate_num_url2, exhibition_card_url1, 
+      exhibition_card_url2, certification_url, hobby, 
+      speciality, id_card_url1, age_is_publish, 
+      weixin, weibo, boke, 
+      reg_time, payment_time, start_time, 
+      over_time, certificate_num_time, exhibition_card_time, 
+      partnercode, awards, servicepack, 
+      picIfValid, weimendian, weimendian_name, 
+      weimendian_company, weimendian_address, weimendian_style, 
+      weimendian_servicepack, weimendian_start, 
+      weChat_account, buscard_style, auth, 
+      weimendian_style_big, weChat_img_path)
+    values (#{id,jdbcType=INTEGER}, #{salesmanid,jdbcType=INTEGER}, #{businessLife,jdbcType=DATE}, 
+      #{lastjob,jdbcType=VARCHAR}, #{duty,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, 
+      #{certificateNum,jdbcType=VARCHAR}, #{exhibitionCard,jdbcType=VARCHAR}, #{licenseCard,jdbcType=VARCHAR}, 
+      #{personalProfile,jdbcType=VARCHAR}, #{hxScore,jdbcType=DOUBLE}, #{extension400,jdbcType=VARCHAR}, 
+      #{overdue,jdbcType=TIMESTAMP}, #{status400,jdbcType=VARCHAR}, #{surplus400,jdbcType=INTEGER}, 
+      #{mdrt,jdbcType=VARCHAR}, #{ljxsbe,jdbcType=VARCHAR}, #{nxsbe,jdbcType=VARCHAR}, 
+      #{tsjl,jdbcType=VARCHAR}, #{shotmsg400,jdbcType=VARCHAR}, #{xbl,jdbcType=DOUBLE}, 
+      #{sndkhs,jdbcType=INTEGER}, #{ljkhs,jdbcType=INTEGER}, #{recordtime,jdbcType=TIMESTAMP}, 
+      #{qq,jdbcType=VARCHAR}, #{ida,jdbcType=VARCHAR}, #{busylife,jdbcType=INTEGER}, 
+      #{snzjyj,jdbcType=VARCHAR}, #{clickrate,jdbcType=INTEGER}, #{constellation,jdbcType=VARCHAR}, 
+      #{source,jdbcType=VARCHAR}, #{serviceNum,jdbcType=VARCHAR}, #{certificateNumUrl1,jdbcType=VARCHAR}, 
+      #{certificateNumUrl2,jdbcType=VARCHAR}, #{exhibitionCardUrl1,jdbcType=VARCHAR}, 
+      #{exhibitionCardUrl2,jdbcType=VARCHAR}, #{certificationUrl,jdbcType=VARCHAR}, #{hobby,jdbcType=VARCHAR}, 
+      #{speciality,jdbcType=VARCHAR}, #{idCardUrl1,jdbcType=VARCHAR}, #{ageIsPublish,jdbcType=VARCHAR}, 
+      #{weixin,jdbcType=VARCHAR}, #{weibo,jdbcType=VARCHAR}, #{boke,jdbcType=VARCHAR}, 
+      #{regTime,jdbcType=TIMESTAMP}, #{paymentTime,jdbcType=TIMESTAMP}, #{startTime,jdbcType=TIMESTAMP}, 
+      #{overTime,jdbcType=TIMESTAMP}, #{certificateNumTime,jdbcType=DATE}, #{exhibitionCardTime,jdbcType=DATE}, 
+      #{partnercode,jdbcType=VARCHAR}, #{awards,jdbcType=VARCHAR}, #{servicepack,jdbcType=VARCHAR}, 
+      #{picifvalid,jdbcType=VARCHAR}, #{weimendian,jdbcType=VARCHAR}, #{weimendianName,jdbcType=VARCHAR}, 
+      #{weimendianCompany,jdbcType=VARCHAR}, #{weimendianAddress,jdbcType=VARCHAR}, #{weimendianStyle,jdbcType=VARCHAR}, 
+      #{weimendianServicepack,jdbcType=VARCHAR}, #{weimendianStart,jdbcType=TIMESTAMP}, 
+      #{wechatAccount,jdbcType=VARCHAR}, #{buscardStyle,jdbcType=VARCHAR}, #{auth,jdbcType=VARCHAR}, 
+      #{weimendianStyleBig,jdbcType=VARCHAR}, #{wechatImgPath,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qjy.open.entity.user.UserMsg" >
+    insert into user_msg
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="salesmanid != null" >
+        salesmanId,
+      </if>
+      <if test="businessLife != null" >
+        business_life,
+      </if>
+      <if test="lastjob != null" >
+        lastjob,
+      </if>
+      <if test="duty != null" >
+        duty,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="certificateNum != null" >
+        certificate_num,
+      </if>
+      <if test="exhibitionCard != null" >
+        exhibition_card,
+      </if>
+      <if test="licenseCard != null" >
+        license_card,
+      </if>
+      <if test="personalProfile != null" >
+        personal_profile,
+      </if>
+      <if test="hxScore != null" >
+        hx_score,
+      </if>
+      <if test="extension400 != null" >
+        extension_400,
+      </if>
+      <if test="overdue != null" >
+        overdue,
+      </if>
+      <if test="status400 != null" >
+        status_400,
+      </if>
+      <if test="surplus400 != null" >
+        surplus_400,
+      </if>
+      <if test="mdrt != null" >
+        mdrt,
+      </if>
+      <if test="ljxsbe != null" >
+        ljxsbe,
+      </if>
+      <if test="nxsbe != null" >
+        nxsbe,
+      </if>
+      <if test="tsjl != null" >
+        tsjl,
+      </if>
+      <if test="shotmsg400 != null" >
+        shotmsg_400,
+      </if>
+      <if test="xbl != null" >
+        xbl,
+      </if>
+      <if test="sndkhs != null" >
+        sndkhs,
+      </if>
+      <if test="ljkhs != null" >
+        ljkhs,
+      </if>
+      <if test="recordtime != null" >
+        recordTime,
+      </if>
+      <if test="qq != null" >
+        qq,
+      </if>
+      <if test="ida != null" >
+        ida,
+      </if>
+      <if test="busylife != null" >
+        busylife,
+      </if>
+      <if test="snzjyj != null" >
+        snzjyj,
+      </if>
+      <if test="clickrate != null" >
+        clickrate,
+      </if>
+      <if test="constellation != null" >
+        constellation,
+      </if>
+      <if test="source != null" >
+        source,
+      </if>
+      <if test="serviceNum != null" >
+        service_num,
+      </if>
+      <if test="certificateNumUrl1 != null" >
+        certificate_num_url1,
+      </if>
+      <if test="certificateNumUrl2 != null" >
+        certificate_num_url2,
+      </if>
+      <if test="exhibitionCardUrl1 != null" >
+        exhibition_card_url1,
+      </if>
+      <if test="exhibitionCardUrl2 != null" >
+        exhibition_card_url2,
+      </if>
+      <if test="certificationUrl != null" >
+        certification_url,
+      </if>
+      <if test="hobby != null" >
+        hobby,
+      </if>
+      <if test="speciality != null" >
+        speciality,
+      </if>
+      <if test="idCardUrl1 != null" >
+        id_card_url1,
+      </if>
+      <if test="ageIsPublish != null" >
+        age_is_publish,
+      </if>
+      <if test="weixin != null" >
+        weixin,
+      </if>
+      <if test="weibo != null" >
+        weibo,
+      </if>
+      <if test="boke != null" >
+        boke,
+      </if>
+      <if test="regTime != null" >
+        reg_time,
+      </if>
+      <if test="paymentTime != null" >
+        payment_time,
+      </if>
+      <if test="startTime != null" >
+        start_time,
+      </if>
+      <if test="overTime != null" >
+        over_time,
+      </if>
+      <if test="certificateNumTime != null" >
+        certificate_num_time,
+      </if>
+      <if test="exhibitionCardTime != null" >
+        exhibition_card_time,
+      </if>
+      <if test="partnercode != null" >
+        partnercode,
+      </if>
+      <if test="awards != null" >
+        awards,
+      </if>
+      <if test="servicepack != null" >
+        servicepack,
+      </if>
+      <if test="picifvalid != null" >
+        picIfValid,
+      </if>
+      <if test="weimendian != null" >
+        weimendian,
+      </if>
+      <if test="weimendianName != null" >
+        weimendian_name,
+      </if>
+      <if test="weimendianCompany != null" >
+        weimendian_company,
+      </if>
+      <if test="weimendianAddress != null" >
+        weimendian_address,
+      </if>
+      <if test="weimendianStyle != null" >
+        weimendian_style,
+      </if>
+      <if test="weimendianServicepack != null" >
+        weimendian_servicepack,
+      </if>
+      <if test="weimendianStart != null" >
+        weimendian_start,
+      </if>
+      <if test="wechatAccount != null" >
+        weChat_account,
+      </if>
+      <if test="buscardStyle != null" >
+        buscard_style,
+      </if>
+      <if test="auth != null" >
+        auth,
+      </if>
+      <if test="weimendianStyleBig != null" >
+        weimendian_style_big,
+      </if>
+      <if test="wechatImgPath != null" >
+        weChat_img_path,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="salesmanid != null" >
+        #{salesmanid,jdbcType=INTEGER},
+      </if>
+      <if test="businessLife != null" >
+        #{businessLife,jdbcType=DATE},
+      </if>
+      <if test="lastjob != null" >
+        #{lastjob,jdbcType=VARCHAR},
+      </if>
+      <if test="duty != null" >
+        #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="certificateNum != null" >
+        #{certificateNum,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibitionCard != null" >
+        #{exhibitionCard,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseCard != null" >
+        #{licenseCard,jdbcType=VARCHAR},
+      </if>
+      <if test="personalProfile != null" >
+        #{personalProfile,jdbcType=VARCHAR},
+      </if>
+      <if test="hxScore != null" >
+        #{hxScore,jdbcType=DOUBLE},
+      </if>
+      <if test="extension400 != null" >
+        #{extension400,jdbcType=VARCHAR},
+      </if>
+      <if test="overdue != null" >
+        #{overdue,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status400 != null" >
+        #{status400,jdbcType=VARCHAR},
+      </if>
+      <if test="surplus400 != null" >
+        #{surplus400,jdbcType=INTEGER},
+      </if>
+      <if test="mdrt != null" >
+        #{mdrt,jdbcType=VARCHAR},
+      </if>
+      <if test="ljxsbe != null" >
+        #{ljxsbe,jdbcType=VARCHAR},
+      </if>
+      <if test="nxsbe != null" >
+        #{nxsbe,jdbcType=VARCHAR},
+      </if>
+      <if test="tsjl != null" >
+        #{tsjl,jdbcType=VARCHAR},
+      </if>
+      <if test="shotmsg400 != null" >
+        #{shotmsg400,jdbcType=VARCHAR},
+      </if>
+      <if test="xbl != null" >
+        #{xbl,jdbcType=DOUBLE},
+      </if>
+      <if test="sndkhs != null" >
+        #{sndkhs,jdbcType=INTEGER},
+      </if>
+      <if test="ljkhs != null" >
+        #{ljkhs,jdbcType=INTEGER},
+      </if>
+      <if test="recordtime != null" >
+        #{recordtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qq != null" >
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="ida != null" >
+        #{ida,jdbcType=VARCHAR},
+      </if>
+      <if test="busylife != null" >
+        #{busylife,jdbcType=INTEGER},
+      </if>
+      <if test="snzjyj != null" >
+        #{snzjyj,jdbcType=VARCHAR},
+      </if>
+      <if test="clickrate != null" >
+        #{clickrate,jdbcType=INTEGER},
+      </if>
+      <if test="constellation != null" >
+        #{constellation,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null" >
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceNum != null" >
+        #{serviceNum,jdbcType=VARCHAR},
+      </if>
+      <if test="certificateNumUrl1 != null" >
+        #{certificateNumUrl1,jdbcType=VARCHAR},
+      </if>
+      <if test="certificateNumUrl2 != null" >
+        #{certificateNumUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibitionCardUrl1 != null" >
+        #{exhibitionCardUrl1,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibitionCardUrl2 != null" >
+        #{exhibitionCardUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="certificationUrl != null" >
+        #{certificationUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="hobby != null" >
+        #{hobby,jdbcType=VARCHAR},
+      </if>
+      <if test="speciality != null" >
+        #{speciality,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardUrl1 != null" >
+        #{idCardUrl1,jdbcType=VARCHAR},
+      </if>
+      <if test="ageIsPublish != null" >
+        #{ageIsPublish,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null" >
+        #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="weibo != null" >
+        #{weibo,jdbcType=VARCHAR},
+      </if>
+      <if test="boke != null" >
+        #{boke,jdbcType=VARCHAR},
+      </if>
+      <if test="regTime != null" >
+        #{regTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paymentTime != null" >
+        #{paymentTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="overTime != null" >
+        #{overTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="certificateNumTime != null" >
+        #{certificateNumTime,jdbcType=DATE},
+      </if>
+      <if test="exhibitionCardTime != null" >
+        #{exhibitionCardTime,jdbcType=DATE},
+      </if>
+      <if test="partnercode != null" >
+        #{partnercode,jdbcType=VARCHAR},
+      </if>
+      <if test="awards != null" >
+        #{awards,jdbcType=VARCHAR},
+      </if>
+      <if test="servicepack != null" >
+        #{servicepack,jdbcType=VARCHAR},
+      </if>
+      <if test="picifvalid != null" >
+        #{picifvalid,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendian != null" >
+        #{weimendian,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendianName != null" >
+        #{weimendianName,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendianCompany != null" >
+        #{weimendianCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendianAddress != null" >
+        #{weimendianAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendianStyle != null" >
+        #{weimendianStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendianServicepack != null" >
+        #{weimendianServicepack,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendianStart != null" >
+        #{weimendianStart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wechatAccount != null" >
+        #{wechatAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="buscardStyle != null" >
+        #{buscardStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="auth != null" >
+        #{auth,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendianStyleBig != null" >
+        #{weimendianStyleBig,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatImgPath != null" >
+        #{wechatImgPath,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qjy.open.entity.user.UserMsg" >
+    update user_msg
+    <set >
+      <if test="salesmanid != null" >
+        salesmanId = #{salesmanid,jdbcType=INTEGER},
+      </if>
+      <if test="businessLife != null" >
+        business_life = #{businessLife,jdbcType=DATE},
+      </if>
+      <if test="lastjob != null" >
+        lastjob = #{lastjob,jdbcType=VARCHAR},
+      </if>
+      <if test="duty != null" >
+        duty = #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="certificateNum != null" >
+        certificate_num = #{certificateNum,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibitionCard != null" >
+        exhibition_card = #{exhibitionCard,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseCard != null" >
+        license_card = #{licenseCard,jdbcType=VARCHAR},
+      </if>
+      <if test="personalProfile != null" >
+        personal_profile = #{personalProfile,jdbcType=VARCHAR},
+      </if>
+      <if test="hxScore != null" >
+        hx_score = #{hxScore,jdbcType=DOUBLE},
+      </if>
+      <if test="extension400 != null" >
+        extension_400 = #{extension400,jdbcType=VARCHAR},
+      </if>
+      <if test="overdue != null" >
+        overdue = #{overdue,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status400 != null" >
+        status_400 = #{status400,jdbcType=VARCHAR},
+      </if>
+      <if test="surplus400 != null" >
+        surplus_400 = #{surplus400,jdbcType=INTEGER},
+      </if>
+      <if test="mdrt != null" >
+        mdrt = #{mdrt,jdbcType=VARCHAR},
+      </if>
+      <if test="ljxsbe != null" >
+        ljxsbe = #{ljxsbe,jdbcType=VARCHAR},
+      </if>
+      <if test="nxsbe != null" >
+        nxsbe = #{nxsbe,jdbcType=VARCHAR},
+      </if>
+      <if test="tsjl != null" >
+        tsjl = #{tsjl,jdbcType=VARCHAR},
+      </if>
+      <if test="shotmsg400 != null" >
+        shotmsg_400 = #{shotmsg400,jdbcType=VARCHAR},
+      </if>
+      <if test="xbl != null" >
+        xbl = #{xbl,jdbcType=DOUBLE},
+      </if>
+      <if test="sndkhs != null" >
+        sndkhs = #{sndkhs,jdbcType=INTEGER},
+      </if>
+      <if test="ljkhs != null" >
+        ljkhs = #{ljkhs,jdbcType=INTEGER},
+      </if>
+      <if test="recordtime != null" >
+        recordTime = #{recordtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qq != null" >
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="ida != null" >
+        ida = #{ida,jdbcType=VARCHAR},
+      </if>
+      <if test="busylife != null" >
+        busylife = #{busylife,jdbcType=INTEGER},
+      </if>
+      <if test="snzjyj != null" >
+        snzjyj = #{snzjyj,jdbcType=VARCHAR},
+      </if>
+      <if test="clickrate != null" >
+        clickrate = #{clickrate,jdbcType=INTEGER},
+      </if>
+      <if test="constellation != null" >
+        constellation = #{constellation,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null" >
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceNum != null" >
+        service_num = #{serviceNum,jdbcType=VARCHAR},
+      </if>
+      <if test="certificateNumUrl1 != null" >
+        certificate_num_url1 = #{certificateNumUrl1,jdbcType=VARCHAR},
+      </if>
+      <if test="certificateNumUrl2 != null" >
+        certificate_num_url2 = #{certificateNumUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibitionCardUrl1 != null" >
+        exhibition_card_url1 = #{exhibitionCardUrl1,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibitionCardUrl2 != null" >
+        exhibition_card_url2 = #{exhibitionCardUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="certificationUrl != null" >
+        certification_url = #{certificationUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="hobby != null" >
+        hobby = #{hobby,jdbcType=VARCHAR},
+      </if>
+      <if test="speciality != null" >
+        speciality = #{speciality,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardUrl1 != null" >
+        id_card_url1 = #{idCardUrl1,jdbcType=VARCHAR},
+      </if>
+      <if test="ageIsPublish != null" >
+        age_is_publish = #{ageIsPublish,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null" >
+        weixin = #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="weibo != null" >
+        weibo = #{weibo,jdbcType=VARCHAR},
+      </if>
+      <if test="boke != null" >
+        boke = #{boke,jdbcType=VARCHAR},
+      </if>
+      <if test="regTime != null" >
+        reg_time = #{regTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paymentTime != null" >
+        payment_time = #{paymentTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="overTime != null" >
+        over_time = #{overTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="certificateNumTime != null" >
+        certificate_num_time = #{certificateNumTime,jdbcType=DATE},
+      </if>
+      <if test="exhibitionCardTime != null" >
+        exhibition_card_time = #{exhibitionCardTime,jdbcType=DATE},
+      </if>
+      <if test="partnercode != null" >
+        partnercode = #{partnercode,jdbcType=VARCHAR},
+      </if>
+      <if test="awards != null" >
+        awards = #{awards,jdbcType=VARCHAR},
+      </if>
+      <if test="servicepack != null" >
+        servicepack = #{servicepack,jdbcType=VARCHAR},
+      </if>
+      <if test="picifvalid != null" >
+        picIfValid = #{picifvalid,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendian != null" >
+        weimendian = #{weimendian,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendianName != null" >
+        weimendian_name = #{weimendianName,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendianCompany != null" >
+        weimendian_company = #{weimendianCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendianAddress != null" >
+        weimendian_address = #{weimendianAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendianStyle != null" >
+        weimendian_style = #{weimendianStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendianServicepack != null" >
+        weimendian_servicepack = #{weimendianServicepack,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendianStart != null" >
+        weimendian_start = #{weimendianStart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wechatAccount != null" >
+        weChat_account = #{wechatAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="buscardStyle != null" >
+        buscard_style = #{buscardStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="auth != null" >
+        auth = #{auth,jdbcType=VARCHAR},
+      </if>
+      <if test="weimendianStyleBig != null" >
+        weimendian_style_big = #{weimendianStyleBig,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatImgPath != null" >
+        weChat_img_path = #{wechatImgPath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qjy.open.entity.user.UserMsg" >
+    update user_msg
+    set salesmanId = #{salesmanid,jdbcType=INTEGER},
+      business_life = #{businessLife,jdbcType=DATE},
+      lastjob = #{lastjob,jdbcType=VARCHAR},
+      duty = #{duty,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      certificate_num = #{certificateNum,jdbcType=VARCHAR},
+      exhibition_card = #{exhibitionCard,jdbcType=VARCHAR},
+      license_card = #{licenseCard,jdbcType=VARCHAR},
+      personal_profile = #{personalProfile,jdbcType=VARCHAR},
+      hx_score = #{hxScore,jdbcType=DOUBLE},
+      extension_400 = #{extension400,jdbcType=VARCHAR},
+      overdue = #{overdue,jdbcType=TIMESTAMP},
+      status_400 = #{status400,jdbcType=VARCHAR},
+      surplus_400 = #{surplus400,jdbcType=INTEGER},
+      mdrt = #{mdrt,jdbcType=VARCHAR},
+      ljxsbe = #{ljxsbe,jdbcType=VARCHAR},
+      nxsbe = #{nxsbe,jdbcType=VARCHAR},
+      tsjl = #{tsjl,jdbcType=VARCHAR},
+      shotmsg_400 = #{shotmsg400,jdbcType=VARCHAR},
+      xbl = #{xbl,jdbcType=DOUBLE},
+      sndkhs = #{sndkhs,jdbcType=INTEGER},
+      ljkhs = #{ljkhs,jdbcType=INTEGER},
+      recordTime = #{recordtime,jdbcType=TIMESTAMP},
+      qq = #{qq,jdbcType=VARCHAR},
+      ida = #{ida,jdbcType=VARCHAR},
+      busylife = #{busylife,jdbcType=INTEGER},
+      snzjyj = #{snzjyj,jdbcType=VARCHAR},
+      clickrate = #{clickrate,jdbcType=INTEGER},
+      constellation = #{constellation,jdbcType=VARCHAR},
+      source = #{source,jdbcType=VARCHAR},
+      service_num = #{serviceNum,jdbcType=VARCHAR},
+      certificate_num_url1 = #{certificateNumUrl1,jdbcType=VARCHAR},
+      certificate_num_url2 = #{certificateNumUrl2,jdbcType=VARCHAR},
+      exhibition_card_url1 = #{exhibitionCardUrl1,jdbcType=VARCHAR},
+      exhibition_card_url2 = #{exhibitionCardUrl2,jdbcType=VARCHAR},
+      certification_url = #{certificationUrl,jdbcType=VARCHAR},
+      hobby = #{hobby,jdbcType=VARCHAR},
+      speciality = #{speciality,jdbcType=VARCHAR},
+      id_card_url1 = #{idCardUrl1,jdbcType=VARCHAR},
+      age_is_publish = #{ageIsPublish,jdbcType=VARCHAR},
+      weixin = #{weixin,jdbcType=VARCHAR},
+      weibo = #{weibo,jdbcType=VARCHAR},
+      boke = #{boke,jdbcType=VARCHAR},
+      reg_time = #{regTime,jdbcType=TIMESTAMP},
+      payment_time = #{paymentTime,jdbcType=TIMESTAMP},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      over_time = #{overTime,jdbcType=TIMESTAMP},
+      certificate_num_time = #{certificateNumTime,jdbcType=DATE},
+      exhibition_card_time = #{exhibitionCardTime,jdbcType=DATE},
+      partnercode = #{partnercode,jdbcType=VARCHAR},
+      awards = #{awards,jdbcType=VARCHAR},
+      servicepack = #{servicepack,jdbcType=VARCHAR},
+      picIfValid = #{picifvalid,jdbcType=VARCHAR},
+      weimendian = #{weimendian,jdbcType=VARCHAR},
+      weimendian_name = #{weimendianName,jdbcType=VARCHAR},
+      weimendian_company = #{weimendianCompany,jdbcType=VARCHAR},
+      weimendian_address = #{weimendianAddress,jdbcType=VARCHAR},
+      weimendian_style = #{weimendianStyle,jdbcType=VARCHAR},
+      weimendian_servicepack = #{weimendianServicepack,jdbcType=VARCHAR},
+      weimendian_start = #{weimendianStart,jdbcType=TIMESTAMP},
+      weChat_account = #{wechatAccount,jdbcType=VARCHAR},
+      buscard_style = #{buscardStyle,jdbcType=VARCHAR},
+      auth = #{auth,jdbcType=VARCHAR},
+      weimendian_style_big = #{weimendianStyleBig,jdbcType=VARCHAR},
+      weChat_img_path = #{wechatImgPath,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
